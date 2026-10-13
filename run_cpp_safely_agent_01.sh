@@ -31,7 +31,7 @@ while [[ $# -gt 0 ]]; do
       cat <<EOF
 Usage: $(basename "$0") [OPTIONS] [-- agent-args...]
 
-Safely build and run Advanced_Coding_Agent_J (and related sources)
+Safely build and run Advanced_Coding_Agent_00 (and related sources)
 inside a hardened Docker sandbox.
 
 Options:
@@ -187,7 +187,7 @@ docker run --rm -it \
       make
     else
       # Fallback when no Makefile is present
-      SRC="Advanced_Coding_Agent_B.cpp"
+      SRC="Advanced_Coding_Agent_00.cpp"
       if [[ ! -f "$SRC" ]]; then
         echo "No Makefile and $SRC not found" >&2
         exit 1
