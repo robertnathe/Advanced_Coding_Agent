@@ -2,7 +2,7 @@ Advanced Coding Agent is a sophisticated, self-contained C++ AI coding agent tha
 
 It features multi-provider LLM routing, robust tool-call parsing, semantic memory, planning, recovery mechanisms, and a 25-case automated test suite.
 
-## Features
+Features
 
 - Multi-Backend LLM Orchestration  
   Supports Groq, OpenRouter, and Google Gemini with intelligent backend selection (UCB-style scoring), per-model health tracking, cooldowns, rate limiting, and automatic fallbacks.
@@ -35,7 +35,7 @@ It features multi-provider LLM routing, robust tool-call parsing, semantic memor
 - Comprehensive Test Suite  
   25 carefully designed test cases covering debugging, concurrency, multi-language pipelines, algorithms, security, data cleaning, graph algorithms, caching, parsing, and more.
 
-## Architecture Overview
+Architecture Overview
 
 ```
 CodingAgent
@@ -59,7 +59,7 @@ Core source files:
 | `agent_utils.hpp`           | JSON repair, sanitization, system prompt    |
 | `TestSuite.h`               | 25 evaluation tasks                         |
 
-## Requirements
+Requirements
 
 - C++20 compiler (`g++`)
 - `libcurl`
@@ -75,7 +75,7 @@ sudo apt install g++ libcurl4-openssl-dev nlohmann-json3-dev libssl-dev
 
 ---
 
-## Building
+Building
 
 ```bash
 # Adjust the source name in the Makefile if needed
@@ -92,9 +92,7 @@ g++ -std=c++20 -O2 -Wall \
     -lcurl -lcrypto
 ```
 
----
-
-## Configuration
+Configuration
 
 Set at least one API key:
 
@@ -106,7 +104,7 @@ export GOOGLE_API_KEY="AIza..."
 
 The agent prefers the backends in the order configured in the `CodingAgent` constructor (OpenRouter → Groq → Google by default in the provided source).
 
-## Usage
+Usage
 
 ```bash
 ./advanced_coding_agent
@@ -129,7 +127,7 @@ Expected output substring for fibonacci_memoized.py: F(50)
 Max turns (default 6): 6
 ```
 
-## Test Suite Highlights
+Test Suite Highlights
 
 The agent is evaluated on tasks such as:
 
@@ -146,21 +144,21 @@ The agent is evaluated on tasks such as:
 
 Each test specifies expected files and runtime validation substrings that must appear in stdout.
 
-## Design Philosophy
+Design Philosophy
 
 - Correctness first – never call `finish` until validations pass.
 - Resilience – extensive recovery paths when the LLM produces invalid or incomplete actions.
 - Efficiency – aggressive caching of compilation, execution, and validation results; semantic memory to avoid re-solving similar tasks.
 - Observability – clear per-turn logging of chosen actions, observations, and recovery decisions.
 
-## Limitations & Future Work
+Limitations & Future Work
 
 - Currently single-process / local filesystem only.
 - Tool set is deliberately minimal (no network tools beyond what the agent itself can invoke via shell).
 - Memory is local and not shared across machines.
 - Potential improvements: vector embeddings, hierarchical planning, multi-agent collaboration, richer sandboxing.
 
-## License
+License
 
 This project is provided for research and educational purposes.
 
