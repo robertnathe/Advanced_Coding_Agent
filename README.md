@@ -370,6 +370,5 @@ This project is provided as research / educational software.
 <div align="center">
 <sub>Built for research on autonomous, validation-driven code synthesis.</sub>
 </div>
-```
 
 
