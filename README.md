@@ -1,8 +1,3 @@
-<!--
-  Frontier Coding Agent — README
-  Keep badges accurate: replace <OWNER>/<REPO> with your actual GitHub path.
--->
-
 <div align="center">
 
 # 🧠 Frontier Coding Agent
